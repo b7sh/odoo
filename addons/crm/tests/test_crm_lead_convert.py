@@ -258,8 +258,7 @@ class TestLeadConvert(crm_common.TestLeadConvertCommon):
             'active_id': self.lead_1.id,
             'active_ids': self.lead_1.ids,
         }).create({})
-        # TDE FIXME: should take into account normalized email version, not encoded one
-        # self.assertEqual(convert.partner_id, customer)
+        self.assertEqual(convert.partner_id, customer)
 
     @users('user_sales_manager')
     def test_lead_convert_no_lang(self):
